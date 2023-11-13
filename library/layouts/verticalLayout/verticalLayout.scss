@@ -1,0 +1,83 @@
+.comprehensive-layout {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-wrap: nowrap;
+  height: 100vh;
+
+  aside,
+  main {
+    height: 100vh;
+  }
+
+  aside {
+    width: $asideWidth;
+    background-color: $asideBg;
+    transition: all .3s;
+    .www-com{
+      height: $headerHeight;
+      margin: 0;
+      display: flex;
+      justify-content:center;
+      align-items: center;
+    }
+
+    .el-menu {
+      width: 100%;
+      border-right: none;
+      overflow: hidden;
+    }
+
+  }
+  aside.collapse-aside{
+    width: 64px;
+    overflow: hidden;
+
+    .el-submenu__title{
+      &>span{
+        display: none;
+      }
+      .el-submenu__icon-arrow{
+        margin-top: -5px;
+        right: 10px;
+      }
+    }
+
+    .www-com .name{
+      transition: all .3s;
+      width: 0;
+      overflow: hidden;
+      margin: 0;
+    }
+
+  }
+
+  main {
+    flex: 1;
+    header {
+      width: 100%;
+      height: $headerHeight;
+      overflow: hidden;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: nowrap;
+      background-color: $headerBg;
+      border-bottom: 1px darkgray solid;
+
+      .left-nav{
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        flex-wrap: nowrap;
+      }
+    }
+
+    .app-main {
+      height: calc(100vh - $headerHeight);
+    }
+
+
+  }
+
+}
